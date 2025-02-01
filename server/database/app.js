@@ -20,7 +20,7 @@ const Reviews = require('./review');
 const Dealerships = require('./dealership');
 
 try {
-  Reviews.deleteMany({}).then((=> {
+  Reviews.deleteMany({}).then(() => {
     Reviews.insertMany(reviews_data['reviews']);
   });
   Dealerships.deleteMany({}).then(() => {
@@ -96,7 +96,7 @@ app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
     "id": new_id,
     "name": data['name'],
     "dealership": data['dealership'],
-    "review": data'review'],
+    "review": data['review'],
     "purchase": data['purchase'],
     "purchase_date": data['purchase_date'],
     "car_make": data['car_make'],
